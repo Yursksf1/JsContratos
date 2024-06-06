@@ -32,7 +32,7 @@ const TemplateEditor = () => {
   const generateDocument = async () => {
     if (!selectedContractType) return;
 
-    const response = await fetch(`/templates/${selectedContractType.file}`);
+    const response = await fetch(`/JsContratos/templates/${selectedContractType.file}`);
     const arrayBuffer = await response.arrayBuffer();
     const zip = new PizZip(arrayBuffer);
     const doc = new Docxtemplater(zip, {
